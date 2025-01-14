@@ -6,6 +6,28 @@
 number1=44 # Buradaki number1=44 olan ver artık bir çöptür
 number1=23
 
+#####################################################################################
+#### None ###########################################################################
+# None: Python'da None özel bir veri türüdür ve boş veya tanımsız bir değeri ifade eder.
+data = None    #Tanımsız veya boş değeri temsil eder
+print("boş değer: ", data)
+
+# - is None: None'un aynı nesne olup olmadığını kontrol eder.
+# - == None: None'a eşit olup olmadığını kontrol eder.
+
+"""
+x = None
+
+ Doğru kullanım
+if x is None:
+    print("x gerçekten None")
+
+ Yanlış olmasa da önerilmeyen kullanım
+if x == None:
+    print("x None'a eşit")
+
+"""
+
 ###################################################################
 # Cast: Type Casting yani Değişkenlerin Tip dönüşümlerini kullanmak
 

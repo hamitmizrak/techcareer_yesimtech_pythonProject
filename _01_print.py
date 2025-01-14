@@ -18,9 +18,18 @@ print(44.23)
 # Birden fazla değer yazdırma
 print("Merhaba","Python","Öğreniyorum")
 
+#####################################################################################
+#### seperate ########################################################################
+# sep: datalar arasında hangi karaktere göre göstersin
 # sep parameter: Ayraç ekle
 print("Merhaba", "Python", "Öğreniyorum", sep=" * ")
 
+
+
+#####################################################################################
+#### end  ########################################################################
+# end parametresi, print() fonksiyonu her çağrıldığında varsayılan olarak yeni bir satıra geçmeyi engeller ve
+# bunun yerine belirtilen değeri kullanır.
 # end parameter: Yeni bir satıra geçmesini engellesin
 print("Merhaba", "Python", "Öğreniyorum"," *** ","Dünya'ya hoşgeldin") # failed: non best practice
 print("Merhaba", "Python", "Öğreniyorum ", end=" *** ")
