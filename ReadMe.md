@@ -21,6 +21,7 @@ PEP 8 : Python Enchancement Proposal: Kodların okunabilirliğini, hatasız çal
 6-) Fonksiyon, değişken isimleri snake_case kuralına göre yazınız.
 7-) Const-Permanent sabir değişkenler BÜYÜK_HARFLERLE_YAZINIZ.
 8-) Değişkenlerde global değişken varsa  `global` keyword yazınız ancak bu pekte önerilmez.
+9-) string için çift veya tek kullanamabilirsiniz.
 ```
 
 
