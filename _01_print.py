@@ -43,6 +43,6 @@ isim = "Hamit"
 soyisim = "Mızrak"
 print("Adım:", isim," Soyadım: ", soyisim)    # 1.YOL
 print("Adım: %s, Soyadım:%s"%(isim,soyisim))  # 2.YOL  %s:string %d:decimal %f:virgüllü
-print(f"Adım: {isim}, Soyadım:  {soyisim}") # 3.YOL Formatter (Python>=3.6)
+print(f"Adım: {isim}, Soyadım:  {soyisim}")   # 3.YOL Formatter (Python>=3.6)
 
 
