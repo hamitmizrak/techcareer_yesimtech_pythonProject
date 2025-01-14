@@ -1,0 +1,4 @@
+# görselleştirme örnekleri için aşağıdaki kütüphaneleri eklemelisiniz:
+matplotlib
+#seaborn
+seaborn==0.11.2

@@ -1,3 +1,9 @@
+import matplotlib.pyplot as plt
+from collections import Counter
+
+######################################################################################
+
+
 """
 Gerçek Hayat Problemi: Blog Yönetim Sistemi ve İçerik Analizi
 Senaryo: Bir blog yönetim sisteminiz var ve bu sistem üzerinden yazarlar içerik yayımlıyor.
