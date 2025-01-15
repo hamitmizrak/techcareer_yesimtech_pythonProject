@@ -87,13 +87,3 @@ blog_icerikleri = [
 """
 
 # 1. Blogların toplam sayısı listeleyerek görselleştirin.
-# 2. Kategorilere göre blog sayısı  listeleyerek görselleştirin.
-# 3. Yazar başına yazılan blog sayısı listeleyerek görselleştirin.
-# 4. En popüler blog (görüntülenme sayısına göre) listeleyerek görselleştirin.
-# 5. Yorum sayısı ve en çok yorum alan blog listeleyerek görselleştirin.
-# 6. Sık kullanılan kelimeleri analiz etme listeleyerek görselleştirin.
-# 7. Kullanıcıların yaptığı toplam yorum sayısı listeleyerek görselleştirin.
-# 8. Yazarların ortalama blog görüntülenme sayısı listeleyerek görselleştirin.
-# 9. Belirli bir kelimenin geçtiği blogları bularak  listeleyerek görselleştirin.
-# 10 Bloglarda En Çok Görüntülenme Sayısına Göre İlk 3 Blog
-# 11. Bloglarda yorum sayılarının ortalamasını hesaplayın.

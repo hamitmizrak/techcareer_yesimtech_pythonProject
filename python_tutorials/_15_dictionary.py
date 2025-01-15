@@ -20,9 +20,6 @@
 # Mevcut olmayan bir anahtara erişmek `KeyError` hatasına yol açar.
 # print(my_dict["adres"])   KeyError
 
-
-
-
 # Boş Dictionary:
 empty_dict = {}
 
