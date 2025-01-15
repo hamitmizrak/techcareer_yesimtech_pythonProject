@@ -87,3 +87,4 @@ blog_icerikleri = [
 
 # 1. Blogların toplam sayısı listeleyerek.
 # 2. Kategorilere göre blog sayısı  listeleyerelim ve görselleştirin.
+# 3. Yazar başına yazılan blog sayısı listeleyerek görselleştirin.
