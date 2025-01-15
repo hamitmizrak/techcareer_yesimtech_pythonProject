@@ -9,7 +9,7 @@ print(metinData)
 metinData2 = "metin2"
 print(metinData2)
 
-# Üçlü tırnak kullanarak çok satırlı string
+# Üçlü tırnak kullanarak çok satırlı string (docstring)
 metinData3 = """Bu,
 birden
 fazla satırdan oluşan
@@ -40,7 +40,7 @@ print(metin3)
 
 print("##########################################")
 # 4-) Harf Sayısı
-metin4 = 'malatya'
+metin4 = 'Malatya'
 # HATA: print("kelime sayısı: "+len(kelime))
 print("kelime sayısı: ", len(metin4))
 
@@ -48,7 +48,7 @@ print("##########################################")
 # Çoğaltma (Repetition): * operatörü ile bir string belirli sayıda tekrarlanabilir.
 metin5 = 'malatya'
 # 5-) Dinamik Uzunluk: Python'da stringlerin uzunluğu dinamik olarak hesaplanabilir.
-print("kelime adeti", metin5 * 3)
+print("kelime adeti", metin5 * 3,sep=" - ")
 
 print("##########################################")
 # 6-) Unicode Desteği: Python'da stringler Unicode karakterleri destekler.
@@ -74,10 +74,10 @@ print("##########################################")
 metin8 = "Python"
 print(metin8[1:4])  # yth  1<=X<4
 
-print(metin8[0:3])  # Pyt
-print(metin8[:3])  # Pyt
+print(metin8[0:3])  # Pyt 0<=X<3
+print(metin8[:3])   # Pyt 0<=X<3
 
-print(metin8[3:])  # hon
+print(metin8[3:])     # hon
 # print(metin8[3:])   # hon
 
 
@@ -136,10 +136,10 @@ print(metin125.index("öğren"))  # 7
 
 print("##########################################")
 # 13-) CAPITALIZE
-# Stringin sadece ilk karakterini büyük, diğerlerini küçük yapar.
+# Stringin sadece ilk karakterini BÜYÜK, diğerlerini küçük yapar.
 # Çoğunlukla cümle başlıkları oluşturmak için kullanılır.
 metin13 = "programlama"
-print("capitalize:", metin13.capitalize())
+print("capitalize:", metin13.capitalize())  # Programlama
 
 print("##########################################")
 # 14-) TITLE
@@ -210,7 +210,7 @@ print("##########################################")
 # 21-) İleri Düzey Formatlama:
 # Raw String: r"metin" şeklinde tanımlanır, kaçış karakterlerini yok sayar.
 print(r"C:\kullanıcı\dosya")  # Kaçış karakteri işlenmez
-print(r"C:\kullanıcı\dosya\naltsatır")  # Kaçış karakteri işlenmez
+print(r"C:\kullanıcı\dosya\naltsatır")   # Kaçış karakteri işlenmez
 # print("C:\kullanıcı\dosya\naltsatır")  # Kaçış karakteri işlenmez
 
 

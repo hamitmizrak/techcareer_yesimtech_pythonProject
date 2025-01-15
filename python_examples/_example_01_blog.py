@@ -34,8 +34,7 @@ blog_icerikleri = [
         "kategori": "Web Geliştirme",
         "goruntulenme": 2000,
         "yorumlar": [
-            {"kullanici": "ali123", "yorum": "Çok net ve açıklayıcı bir yazı, teşekkürler!"},
-            {"kullanici": "zeynep654", "yorum": "HTML kısmı iyi ama CSS biraz daha detaylandırılmalı."},
+            {"kullanici": "ali123", "yorum": "Çok net ve açıklayıcı bir yazı, teşekkürler!"}
         ],
     },
     {
@@ -86,4 +85,5 @@ blog_icerikleri = [
     Bu örnek, bir blog yönetim sisteminin nasıl analiz edilebileceğini gösterir ve gerçek hayatta uygulanabilir bir çözüm sunar. 
 """
 
-# 1. Blogların toplam sayısı listeleyerek görselleştirin.
+# 1. Blogların toplam sayısı listeleyerek.
+# 2. Kategorilere göre blog sayısı  listeleyerelim ve görselleştirin.

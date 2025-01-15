@@ -70,7 +70,8 @@ print(set1 - set2)   #Çıktı: {1}
 
 ####################################################################
 # Frozen set, set'in immutable (değiştirilemez) bir versiyonudur.
-# Normal setlerde olduğu gibi eşsiz öğeler içerir, ancak bir kez oluşturulduktan sonra içeriği değiştirilemez.
+# Normal setlerde olduğu gibi eşsiz öğeler içerir,
+# ancak bir kez oluşturulduktan sonra içeriği değiştirilemez.
 frozen = frozenset([1, 2, 3])
 print(frozen)   #Çıktı: frozenset({1, 2, 3})
 

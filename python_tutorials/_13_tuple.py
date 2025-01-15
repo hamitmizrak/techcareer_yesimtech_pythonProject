@@ -11,7 +11,7 @@ empty_tuple = ()
 # DİKKAT: Tek öğeli bir tuple oluştururken, parantez içindeki öğeden sonra virgül koyulmazsa,
 # Python bunu tuple olarak algılamaz.
 single_element_tuple = (5,)
-not_a_tuple = (1)   # Bu bir tamsayıdır.
+# not_a_tuple = (1)   # Bu bir tamsayıdır.
 a_tuple = (1,)      # Bu bir tuple'dır.
 
 # Birden fazla öğe içeren tuple

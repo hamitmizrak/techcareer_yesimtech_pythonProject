@@ -26,7 +26,7 @@ print(reduce_result)
 # Küçükten Büyüğe
 print("Küçükten Büyüğe: ", sorted(sayilar))
 # Büyükten Küçüğe
-print("Büyükten Küçüğe : ",list(reversed(sayilar)))
+print("Tersten yazdır  : ",list(reversed(sayilar)))
 print("Büyükten Küçüğe : ",list(reversed(sorted(sayilar))))
 
 # 5- zip(): İki veya daha fazla iterable’ı birleştirerek bir dizi tuple oluşturur.
