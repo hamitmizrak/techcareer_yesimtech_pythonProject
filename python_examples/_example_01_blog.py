@@ -216,7 +216,10 @@ def kategorilere_gore_blog_sayisi_dairesel_grafik(blog_icerikleri):
     plt.figure(figsize=(8,8))
 
     # Dairesel Grafik
-    plt.pie(pilot_value_blog_sayilari,labels=pilot_key_kategoriler, autopct='%1.1f%%',startangle=150, colors=plt.cm.Paired.colors)
+    # Dairesel dilimlerin yüzdelik oranları: autopct='%1.1f%%'
+    # Pasta grafiğinin başlangıç açısı: startangle=150,
+    # Otomatik renkler: colors=plt.cm.Paired.colors:
+    plt.pie(pilot_value_blog_sayilari,labels=pilot_key_kategoriler, ,startangle=140, colors=plt.cm.Paired.colors)
 
     plt.title("Kategorilere Göre Blog Sayısı Dairesel Grafik", color="blue", fontsize=18, fontweight='bold')
 
