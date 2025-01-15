@@ -6,7 +6,6 @@ from scipy.stats import alpha
 
 ######################################################################################
 
-
 """
 Gerçek Hayat Problemi: Blog Yönetim Sistemi ve İçerik Analizi
 Senaryo: Bir blog yönetim sisteminiz var ve bu sistem üzerinden yazarlar içerik yayımlıyor.
@@ -233,8 +232,15 @@ def kategorilere_gore_blog_sayisi_dairesel_grafik(blog_icerikleri):
     # Dairesel dilimlerin yüzdelik oranları: autopct='%1.1f%%'
     # Pasta grafiğinin başlangıç açısı: startangle=150,
     # Otomatik renkler: colors=plt.cm.Paired.colors:
-    plt.pie(pilot_value_blog_sayilari, labels=pilot_key_kategoriler, startangle=140, colors=plt.cm.Paired.colors)
+    plt.pie(
+        pilot_value_blog_sayilari,
+        labels=pilot_key_kategoriler,
+        autopct='%1.1f%%',  # Yüzdelik oranları dilimlerin üzerine yazdır
+        startangle=90,  # Grafiğin başlangıç açısını ayarla
+        colors=plt.cm.Paired.colors  # Renk paleti
+    )
 
+    # Title
     plt.title("Kategorilere Göre Blog Sayısı Dairesel Grafik", color="blue", fontsize=18, fontweight='bold')
 
     # Grafikleri kaydet
@@ -325,4 +331,56 @@ def yazar_basina_blog_sayisi_cizgisel(blog_icerikleri):
     plt.show()
 
 # Fonksiyonu çağırmak ve Grafiği çizdirmek
-yazar_basina_blog_sayisi_cizgisel(blog_icerikleri)
+#yazar_basina_blog_sayisi_cizgisel(blog_icerikleri)
+
+################################################################################################
+# 4. En popüler blog (görüntülenme sayısına göre)
+def en_populer_blog_cizgi_grafik(blog_icerikleri):
+    """
+    Blog içerisindeki en popüler blogları çubuk grafikle gösteriyoruz.
+    Parameter:
+      blog_icerikleri(list)
+
+    Çıktı:
+      En popüler blog başlığı ve görüntüleme sayısını göster
+    """
+    print("\n\rEn Popüler Blog:")
+    # En popüler blogları hesaplama
+    en_populer_blog = max(blog_icerikleri, key=lambda x: x["goruntulenme"])
+    print(f"Başlık: {en_populer_blog['baslik']}, Görüntüleme: {en_populer_blog['goruntulenme']}")
+
+    ### GRAFIK CIZ ########################################################
+    # Verileri Hazırlama
+    # key: blog_basligi
+    # value: goruntuleme_sayisi
+    pilot_key_blog_basligi = [blog["baslik"] for blog in blog_icerikleri] # blog_basligi
+    pilot_value_goruntuleme_sayisi = [blog["goruntulenme"] for blog in blog_icerikleri] # blog_basligi
+
+    # Çubuk grafik çizimi
+    # Grafik alanını genişlik, yüksekliklerini ayalarlıyalım
+    # genişlik:8, yükseklik:5
+    plt.figure(figsize=(8, 5))  # Grafik boyutunu gösterecek
+    plt.barh(pilot_key_blog_basligi, pilot_value_goruntuleme_sayisi, color='lightyellow', edgecolor="black", alpha=0.8)
+    plt.title("Yazar Başına Blog Sayısı", color="blue", fontsize=18, fontweight='bold')
+    plt.xlabel("Blogların Görüntüleme SAyısı", color="red", fontsize=8, fontweight='bold', labelpad=10)
+    plt.ylabel("Blog Sayısı", color="red", fontsize=8, fontweight='bold', labelpad=10)
+    #plt.xticks(rotation=30, fontsize=12, color='darkred')  # X ekseni yazıları
+    #for i, val in enumerate(pilot_value_goruntuleme_sayisi):
+    #    plt.text(i, val + 0.2, str(val), ha='center', fontsize=12, color='darkgreen', fontweight='bold')
+    #plt.gca().set_facecolor("white")
+    #plt.gca().spines['bottom'].set_linewidth(1.4)
+    #plt.gca().spines['left'].set_linewidth(1.4)
+    plt.grid(axis='y', linestyle="--", alpha=0.6)
+    plt.tight_layout()
+
+    # Grafikleri kaydet
+    plt.savefig("yazar_basina_blog_sayisi_cizgisel.png", dpi=350)  # Grafiği kaydet
+
+    # Grafiği Ekranda Göster
+    plt.show()
+
+# Fonksiyonu çağırmak ve Grafiği çizdirmek
+en_populer_blog_cizgi_grafik(blog_icerikleri)
+
+################################################################################################
+# 5. Yorum sayısı ve en çok yorum alan blog
