@@ -76,20 +76,7 @@ blog_icerikleri = [
             {"kullanici": "ali1234", "yorum": "SEO'yu iyi anlatmışsınız, pratik teknikler için güzel bir rehber."},
         ],
     },
-{
-        "blog_id": 6,
-        "yazar": "zeynep456",
-        "baslik": "SEO Teknikleriyle Blog Trafiğini Artırma-3",
-        "icerik": "SEO, web sitenizin arama motorlarında üst sıralarda yer almasını sağlar. Bu yazı, etkili SEO tekniklerini içerir.",
-        "kategori": "Dijital Pazarlama",
-        "goruntulenme": 30000,
-        "yorumlar": [
-            {"kullanici": "mehmet789", "yorum": "Çok işime yaradı, teşekkürler!"},
-            {"kullanici": "ali123", "yorum": "SEO'yu-1 iyi anlatmışsınız, pratik teknikler için güzel bir rehber."},
-            {"kullanici": "aliklm", "yorum": "SEO'yu-2 iyi anlatmışsınız, pratik teknikler için güzel bir rehber."},
-            {"kullanici": "alixyz", "yorum": "SEO'yu-3 iyi anlatmışsınız, pratik teknikler için güzel bir rehber."},
-        ],
-    },
+
 ]
 
 """
@@ -108,9 +95,9 @@ print(f"Toplam Blog Sayısı: {toplam_blog}")
 
 
 ################################################################################################
-# 2. Kategorilere göre blog sayısı listeleyerelim ve görselleştirin.
+# 2. Kategorilere göre blog sayısı listeleyerelim ve Çizgisel görselleştirin.
 # Kategorilere göre blog sayısı bulalım.
-def kategorilere_gore_blog_sayisi_grafik(blog_icerikleri):
+def kategorilere_gore_blog_sayisi_cizgisel_grafik(blog_icerikleri):
     """
       Blog içeriklerini alsın ve kategorilere göre blog sayısını bulsun ve grafiğibi çizsin
 
@@ -191,7 +178,56 @@ def kategorilere_gore_blog_sayisi_grafik(blog_icerikleri):
     plt.show()
 
 # Fonksiyonu çağırmak ve Grafiği çizdirmek
-kategorilere_gore_blog_sayisi_grafik(blog_icerikleri)
+kategorilere_gore_blog_sayisi_cizgisel_grafik(blog_icerikleri)
+
+################################################################################################
+# 2. Kategorilere göre blog sayısı listeleyerelim ve Çizgisel görselleştirin.
+# Kategorilere göre blog sayısı bulalım.
+def kategorilere_gore_blog_sayisi_dairesel_grafik(blog_icerikleri):
+    """
+      Blog içeriklerini alsın ve kategorilere göre blog sayısını bulsun ve grafiğibi çizsin
+
+      parametre:
+          blog_icerikleri(list): Blog verilerinin bulunduğu liste
+    """
+    print("\n\rKategorilere Göre Blog Sayısı:")
+
+    # Kategoriye göre blog sayısını tutan dictionary
+    kategori_sayilari = {}
+    for blog in blog_icerikleri:
+        kategori = blog["kategori"]
+        # Eğer kategori varsa kategori sayısını değeri 1 artır
+        # Yoksa varsayılan değer olan `0` eklesin. (0:Etkisiz eleman)
+        kategori_sayilari[kategori] = kategori_sayilari.get(kategori, 0) + 1
+
+    # Pythonda kategori_sayilari.items()
+    # bir dictionary yapısınıdaki öğerlere erişmek için kullanılan metottur
+    # items(): sözlüğün tüm anahtar-değer çiftleri döndürür
+    for kategori, sayi in kategori_sayilari.items():
+        print(f"{kategori}: {sayi} adet")
+
+    ### GRAFIK CIZ ########################################################
+    # Verileri Hazırlama
+    # key: kategorilerin isimlerini versin
+    # value: Blog sayıları
+    pilot_key_kategoriler = list(kategori_sayilari.keys())
+    pilot_value_blog_sayilari = list(kategori_sayilari.values())
+
+    plt.figure(figsize=(8,8))
+
+    # Dairesel Grafik
+    plt.pie(pilot_value_blog_sayilari,labels=pilot_key_kategoriler, autopct='%1.1f%%',startangle=150, colors=plt.cm.Paired.colors)
+
+    plt.title("Kategorilere Göre Blog Sayısı Dairesel Grafik", color="blue", fontsize=18, fontweight='bold')
+
+    # Grafikleri kaydet
+    plt.savefig("kategorilere_gore_blog_sayisi_grafik.png", dpi=350)  # Grafiği kaydet
+
+    # Grafiği Ekranda Göster
+    plt.show()
+
+# Fonksiyonu çağırmak ve Grafiği çizdirmek
+kategorilere_gore_blog_sayisi_dairesel_grafik(blog_icerikleri)
 
 ################################################################################################
 # 3. Yazar başına yazılan blog sayısı listeleyerek görselleştirin.
