@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 from collections import Counter
 
+from matplotlib.lines import lineStyles
 from scipy.stats import alpha
 
 ######################################################################################
@@ -119,35 +120,57 @@ def kategorilere_gore_blog_sayisi_grafik(blog_icerikleri):
         print(f"{kategori}: {sayi} adet")
 
     # Verileri Hazırlama
-    kategoriler = list(kategori_sayilari.keys())  # key: kategorilerin isimlerini versin
-    blog_sayilari = list(kategori_sayilari.keys())  # key: kategorilerin isimlerini versin
+    # key: kategorilerin isimlerini versin
+    # value: Blog sayıları
+    pilot_key_kategoriler = list(kategori_sayilari.keys())
+    pilot_value_blog_sayilari = list(kategori_sayilari.values())
 
     # Çubuk grafik çizimi
     # Grafik alanını genişlik, yüksekliklerini ayalarlıyalım
     # genişlik:8, yükseklik:5
-    plt.figure(figsize=(8,5)) # Grafik boyutunu gösterecek
+    plt.figure(figsize=(8, 5))  # Grafik boyutunu gösterecek
 
     # Çubuk grafik
     # plt.bar(X,Y,color='skyblue',edgecolor="black",alpha=0.8)
-    # X: kategoriler
-    # Y: blog_sayilari(Yani Yükseklik)
+    # X: pilot_key_kategoriler
+    # Y: pilot_value_blog_sayilari(Yani Yükseklik)
     # color: çubuk rengi
     # edgecolor: kenar rengi
-    plt.bar(kategoriler,blog_sayilari,color='skyblue',edgecolor="black",alpha=0.8)
+    plt.bar(pilot_key_kategoriler, pilot_value_blog_sayilari, color='skyblue', edgecolor="black", alpha=0.8)
 
     # Çubuk Title (Grafiğin Başlığı)
     plt.title("Kategorilere Göre Blog Sayısı", color="blue", fontsize=18, fontweight='bold')
 
-    # X: kategoriler Renk
-    plt.xlabel("Kategoriler", color="red", fontsize=14, fontweight='bold',labelpad=10)
+    # X: pilot_key_kategoriler Renk
+    plt.xlabel("Kategoriler", color="red", fontsize=14, fontweight='bold', labelpad=10)
 
-    # Y: blog_sayilari Renk
-    plt.ylabel("Blog Sayısı", color="red", fontsize=14, fontweight='bold',labelpad=10)
+    # Y: pilot_value_blog_sayilari Renk
+    plt.ylabel("Blog Sayısı", color="red", fontsize=14, fontweight='bold', labelpad=10)
 
-    # Rotation
-    #
-    plt.xticks(rotation=30, fontsize=11, color="darkred")
+    # rotation=30: Kategori isimlerini 30 derece eğimle yazdırır.
+    # fontsize=10: X ekseni yazılarının boyutunu belirler.
+    plt.xticks(rotation=30, fontsize=12, color='darkred')  # X ekseni yazıları
 
+    # Bu kodun görevi, bir grafik üzerindeki çubukların (barların) üzerine etiket eklemektir
+    for i, val in enumerate(pilot_value_blog_sayilari):
+        plt.text(i, val + 0.2, str(val), ha='center', fontsize=12, color='darkgreen', fontweight='bold')
+
+    # Renkli Grafikler için beyaz arayüz eklemek
+    plt.gca().set_facecolor("white")
+
+    # X ve Y  eksen çizgileri
+    plt.gca().spines['bottom'].set_linewidth(1.4)
+    plt.gca().spines['left'].set_linewidth(1.4)
+
+    # axis: y : ASdece Y ekseni boyunca ızgaları çizer
+    # Y eksi için ızgara
+    plt.grid(axis='y', linestyle="--", alpha=0.8)
+
+    # Gragik elemanlarını düzenin optimize etmek
+    plt.tight_layout()
+
+    # Grafikleri kaydet
+    plt.savefig("kategorilere_gore_blog_sayisi_grafik.png", dpi=350)  # Grafiği kaydet
 
     # Grafiği Ekranda Göster
     plt.show()
