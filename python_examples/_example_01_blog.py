@@ -76,6 +76,20 @@ blog_icerikleri = [
             {"kullanici": "ali1234", "yorum": "SEO'yu iyi anlatmışsınız, pratik teknikler için güzel bir rehber."},
         ],
     },
+{
+        "blog_id": 6,
+        "yazar": "zeynep456",
+        "baslik": "SEO Teknikleriyle Blog Trafiğini Artırma-3",
+        "icerik": "SEO, web sitenizin arama motorlarında üst sıralarda yer almasını sağlar. Bu yazı, etkili SEO tekniklerini içerir.",
+        "kategori": "Dijital Pazarlama",
+        "goruntulenme": 30000,
+        "yorumlar": [
+            {"kullanici": "mehmet789", "yorum": "Çok işime yaradı, teşekkürler!"},
+            {"kullanici": "ali123", "yorum": "SEO'yu-1 iyi anlatmışsınız, pratik teknikler için güzel bir rehber."},
+            {"kullanici": "aliklm", "yorum": "SEO'yu-2 iyi anlatmışsınız, pratik teknikler için güzel bir rehber."},
+            {"kullanici": "alixyz", "yorum": "SEO'yu-3 iyi anlatmışsınız, pratik teknikler için güzel bir rehber."},
+        ],
+    },
 ]
 
 """
@@ -119,6 +133,7 @@ def kategorilere_gore_blog_sayisi_grafik(blog_icerikleri):
     for kategori, sayi in kategori_sayilari.items():
         print(f"{kategori}: {sayi} adet")
 
+    ### GRAFIK CIZ ########################################################
     # Verileri Hazırlama
     # key: kategorilerin isimlerini versin
     # value: Blog sayıları
@@ -174,7 +189,6 @@ def kategorilere_gore_blog_sayisi_grafik(blog_icerikleri):
 
     # Grafiği Ekranda Göster
     plt.show()
-
 
 # Fonksiyonu çağırmak ve Grafiği çizdirmek
 kategorilere_gore_blog_sayisi_grafik(blog_icerikleri)
