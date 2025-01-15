@@ -76,6 +76,20 @@ blog_icerikleri = [
             {"kullanici": "ali1234", "yorum": "SEO'yu iyi anlatmışsınız, pratik teknikler için güzel bir rehber."},
         ],
     },
+    {
+        "blog_id": 6,
+        "yazar": "zeynep456",
+        "baslik": "SEO Teknikleriyle Blog Trafiğini Artırma-2",
+        "icerik": "Data SEO, web sitenizin arama motorlarında üst sıralarda yer almasını sağlar. Bu yazı, etkili SEO tekniklerini içerir.",
+        "kategori": "Dijital Pazarlama",
+        "goruntulenme": 3700,
+        "yorumlar": [
+            {"kullanici": "mehmet789", "yorum": "Çok işime yaradı, teşekkürler!"},
+            {"kullanici": "ali123", "yorum": "1-SEO'yu iyi anlatmışsınız, pratik teknikler için güzel bir rehber."},
+            {"kullanici": "alixyz", "yorum": "2-SEO'yu iyi anlatmışsınız, pratik teknikler için güzel bir rehber."},
+            {"kullanici": "veli123", "yorum": "3- SEO'yu iyi anlatmışsınız, pratik teknikler için güzel bir rehber."},
+        ],
+    },
 
 ]
 
@@ -172,13 +186,13 @@ def kategorilere_gore_blog_sayisi_cizgisel_grafik(blog_icerikleri):
     plt.tight_layout()
 
     # Grafikleri kaydet
-    plt.savefig("kategorilere_gore_blog_sayisi_grafik.png", dpi=350)  # Grafiği kaydet
+    plt.savefig("kategorilere_gore_blog_sayisi_cizgisel_grafik.png", dpi=350)  # Grafiği kaydet
 
     # Grafiği Ekranda Göster
     plt.show()
 
 # Fonksiyonu çağırmak ve Grafiği çizdirmek
-kategorilere_gore_blog_sayisi_cizgisel_grafik(blog_icerikleri)
+# kategorilere_gore_blog_sayisi_cizgisel_grafik(blog_icerikleri)
 
 ################################################################################################
 # 2. Kategorilere göre blog sayısı listeleyerelim ve Çizgisel görselleştirin.
@@ -213,24 +227,102 @@ def kategorilere_gore_blog_sayisi_dairesel_grafik(blog_icerikleri):
     pilot_key_kategoriler = list(kategori_sayilari.keys())
     pilot_value_blog_sayilari = list(kategori_sayilari.values())
 
-    plt.figure(figsize=(8,8))
+    plt.figure(figsize=(8, 8))
 
     # Dairesel Grafik
     # Dairesel dilimlerin yüzdelik oranları: autopct='%1.1f%%'
     # Pasta grafiğinin başlangıç açısı: startangle=150,
     # Otomatik renkler: colors=plt.cm.Paired.colors:
-    plt.pie(pilot_value_blog_sayilari,labels=pilot_key_kategoriler,startangle=140, colors=plt.cm.Paired.colors)
+    plt.pie(pilot_value_blog_sayilari, labels=pilot_key_kategoriler, startangle=140, colors=plt.cm.Paired.colors)
 
     plt.title("Kategorilere Göre Blog Sayısı Dairesel Grafik", color="blue", fontsize=18, fontweight='bold')
 
     # Grafikleri kaydet
-    plt.savefig("kategorilere_gore_blog_sayisi_grafik.png", dpi=350)  # Grafiği kaydet
+    plt.savefig("kategorilere_gore_blog_sayisi_dairesel_grafik.png", dpi=350)  # Grafiği kaydet
 
     # Grafiği Ekranda Göster
     plt.show()
 
 # Fonksiyonu çağırmak ve Grafiği çizdirmek
-kategorilere_gore_blog_sayisi_dairesel_grafik(blog_icerikleri)
+# kategorilere_gore_blog_sayisi_dairesel_grafik(blog_icerikleri)
 
 ################################################################################################
 # 3. Yazar başına yazılan blog sayısı listeleyerek görselleştirin.
+def yazar_basina_blog_sayisi_cizgisel(blog_icerikleri):
+    """
+    Blog içerisindeki yazar başına yazılan blog sayılarını çubuk grafikle yapıyoruz.
+    Parameter:
+      blog_icerikleri(list)
+    """
+
+    print("\n\rYazar Başına Yazılan Blog Sayıları:")
+    # Yazar başına blog sayısını hesaplama
+    yazar_blog_sayilari = {}
+    for blog in blog_icerikleri:
+        yazar = blog["yazar"]
+        # Yoksa varsayılan değer olan `0` eklesin. (0:Etkisiz eleman)
+        yazar_blog_sayilari[yazar] = yazar_blog_sayilari.get(yazar,0)+1
+
+    # Hesaplanmış Verileri almak
+    for  yazar, sayi in yazar_blog_sayilari.items():
+        print(f"{yazar}: {sayi} adet")
+
+    ### GRAFIK CIZ ########################################################
+    # Verileri Hazırlama
+    # key: kategorilerin isimlerini versin
+    # value: Blog sayıları
+    pilot_key_yazarlar = list(yazar_blog_sayilari.keys())
+    pilot_value_blog_sayilari = list(yazar_blog_sayilari.values())
+
+    # Çubuk grafik çizimi
+    # Grafik alanını genişlik, yüksekliklerini ayalarlıyalım
+    # genişlik:8, yükseklik:5
+    plt.figure(figsize=(8, 5))  # Grafik boyutunu gösterecek
+
+    # Çubuk grafik
+    # plt.bar(X,Y,color='skyblue',edgecolor="black",alpha=0.8)
+    # X: pilot_key_yazarlar
+    # Y: pilot_value_blog_sayilari(Yani Yükseklik)
+    # color: çubuk rengi
+    # edgecolor: kenar rengi
+    plt.bar(pilot_key_yazarlar, pilot_value_blog_sayilari, color='orange', edgecolor="black", alpha=0.8)
+
+    # Çubuk Title (Grafiğin Başlığı)
+    plt.title("Yazar Başına Blog Sayısı", color="blue", fontsize=18, fontweight='bold')
+
+    # X: pilot_key_yazarlar Renk
+    plt.xlabel("Yazarlar", color="red", fontsize=14, fontweight='bold', labelpad=10)
+
+    # Y: pilot_value_blog_sayilari Renk
+    plt.ylabel("Blog Sayısı", color="red", fontsize=14, fontweight='bold', labelpad=10)
+
+    # rotation=30: Kategori isimlerini 30 derece eğimle yazdırır.
+    # fontsize=10: X ekseni yazılarının boyutunu belirler.
+    plt.xticks(rotation=30, fontsize=12, color='darkred')  # X ekseni yazıları
+
+    # Bu kodun görevi, bir grafik üzerindeki çubukların (barların) üzerine etiket eklemektir
+    for i, val in enumerate(pilot_value_blog_sayilari):
+        plt.text(i, val + 0.2, str(val), ha='center', fontsize=12, color='darkgreen', fontweight='bold')
+
+    # Renkli Grafikler için beyaz arayüz eklemek
+    plt.gca().set_facecolor("white")
+
+    # X ve Y  eksen çizgileri
+    plt.gca().spines['bottom'].set_linewidth(1.4)
+    plt.gca().spines['left'].set_linewidth(1.4)
+
+    # axis: y : ASdece Y ekseni boyunca ızgaları çizer
+    # Y eksi için ızgara
+    plt.grid(axis='y', linestyle="--", alpha=0.8)
+
+    # Gragik elemanlarını düzenin optimize etmek
+    plt.tight_layout()
+
+    # Grafikleri kaydet
+    plt.savefig("yazar_basina_blog_sayisi_cizgisel.png", dpi=350)  # Grafiği kaydet
+
+    # Grafiği Ekranda Göster
+    plt.show()
+
+# Fonksiyonu çağırmak ve Grafiği çizdirmek
+yazar_basina_blog_sayisi_cizgisel(blog_icerikleri)
