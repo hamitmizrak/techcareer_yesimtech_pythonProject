@@ -1,5 +1,5 @@
-# public
-# private : Encapsulation GET,SET
+
+# Encapsulation GET,SET
 
 # Python'da yapıcı metot: __init__ bu metot
 # __init__: Bir sınıf örneğimizi oluşturduğumuzda __init__ olan metot otomatik çağrılır.
