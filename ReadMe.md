@@ -96,6 +96,9 @@ komutun veya sembolün, sıradan bir metin içinde kullanılması gerektiğinde 
 
 ## Python
 ```sh 
+Django      : python-3.10.0-amd64
+PythonPure  : python-3.13.1-amd64
+Mongo       : 
 ```
 
 ## Python
