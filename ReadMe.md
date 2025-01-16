@@ -101,8 +101,61 @@ PythonPure  : python-3.13.1-amd64
 Mongo       : 
 ```
 
-## Python
-```sh 
+## Python Access Modifier
+```sh
+Python'da, bir sınıfın alanlarının **public**, **private**, veya **protected** olduğunu anlamak için şu kuralları takip edebilirsiniz:
+
+### 1. **Public** (Genel erişim):
+- Bir değişken veya metoda doğrudan erişim mümkündür.
+- İsimlendirmede herhangi bir özel işaret kullanılmaz.
+- Örnek: `self.yil` ve `self.renk` bu sınıfta public.
+
+### 2. **Protected** (Korunan):
+- Protected üyeler, `_` (tek alt çizgi) ile başlar.
+- Bu üyeler, doğrudan sınıfın içinde ve bu sınıftan türeyen alt sınıflarda erişilebilir.
+- Python'da bu, yalnızca bir "anlaşma" olarak kabul edilir; teknik olarak, bu üyelere dışarıdan erişim yine de mümkündür.
+- Örnek: `self._model` bu sınıfta protected.
+
+### 3. **Private** (Özel erişim):
+- Private üyeler, `__` (çift alt çizgi) ile başlar.
+- Python'da bu isimler "name mangling" denilen bir yöntemle değiştirilir, böylece doğrudan erişim zorlaşır.
+- Örneğin, `self.__marka`, aslında `Araba._Araba__marka` olarak saklanır.
+- Private üyelere sınıf dışından doğrudan erişim sağlanamaz; yalnızca getter ve setter gibi yöntemlerle erişilir.
+- Örnek: `self.__marka` bu sınıfta private.
+
+---
+
+### Sınıfınızda Alanların Durumu:
+
+- **Public**: `self.yil`, `self.renk`
+- **Protected**: `self._model`
+- **Private**: `self.__marka`
+
+### Erişim Kontrollerinin Testi:
+
+Bu durumları görmek için aşağıdaki kodu çalıştırabilirsiniz:
+
+```python
+araba = Araba()
+
+# Public erişim
+print(araba.yil)  # Doğrudan erişilebilir
+print(araba.renk)  # Doğrudan erişilebilir
+
+# Protected erişim
+print(araba._model)  # Teknik olarak erişilebilir, ancak önerilmez
+
+# Private erişim
+try:
+    print(araba.__marka)  # AttributeError: 'Araba' object has no attribute '__marka'
+except AttributeError as e:
+    print(e)
+
+# Private doğru erişim
+print(araba.get_marka())  # Doğru yol
+```
+
+Sonuçlar bu kuralları doğrular. Eğer başka bir konuda detay isterseniz, lütfen belirtin!
 ```
 
 ## Python
