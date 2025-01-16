@@ -39,7 +39,28 @@ pip show matplotlib
 #############################################################################
 # Mevcut paketlerimizi requirement içine eklensin
 pip freeze > requirements_revize.txt
+#pip freeze > requirements_revize.txt
 
-###############################################################################################
+##############################################################################
+# PEP8
+
+# Pylint
+# Pylint: Kod stil uyumluluğunu, olası hataları eklemek, smell coding(Kötü kod)
+pip install pylint
+
+
+# Flake8:Python kodu için en popüler olan linting,
+# stil problemlerini sağlamak
+pip install flake8
+
+# Black
+# Black: PEP 8 standartlarına uygun, sade ve okunabilir Python kodunu hazırlar
+# Kodlarımızı daha okunabilir olmasını ve düzenli olmasını sağlar.
+# python -m pip install --upgrade pip
+# pip install black
+# pip install -r requirements.txt
+pip install black
+
+##############################################################################
 # 2.YOL
 # pip install -r requirements.txt
