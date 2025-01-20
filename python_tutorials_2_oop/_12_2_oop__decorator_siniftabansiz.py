@@ -1,4 +1,7 @@
-# Decorator fonksiyonunu, sınıf tabanlı bir tasarımla birleştirebilirsiniz. Ancak bu iki yapının bir araya getirilmesi, kullanım amacına ve bağlama bağlıdır. Sınıf tabanlı bir sistemde, yetki kontrolü işlevini bir sınıfın veya metodun davranışına entegre etmek için decorator’ü sınıf tabanlı yapıya dönüştürebiliriz.
+# Decorator fonksiyonunu, sınıf tabanlı bir tasarımla birleştirebilirsiniz.
+# Ancak bu iki yapının bir araya getirilmesi, kullanım amacına ve bağlama bağlıdır.
+# Sınıf tabanlı bir sistemde,
+# yetki kontrolü işlevini bir sınıfın veya metodun davranışına entegre etmek için decorator’ü sınıf tabanlı yapıya dönüştürebiliriz.
 #
 # Sınıf ve Fonksiyon Dekoratörlerini Birleştirme
 # Aşağıda, authorize fonksiyonunu sınıf tabanlı yapıya dahil ederek birleştirilmiş bir çözüm yer almaktadır:
@@ -82,4 +85,6 @@ print(panel.view(regular_user))  # Çıktı: Erişim reddedildi! admin yetkisi g
 # Yeniden Kullanılabilirlik: authorize dekoratörü, sınıf metodlarında ve fonksiyonlarda tekrar tekrar kullanılabilir.
 # Modülerlik: Kullanıcı rolleri ve yetkilendirme işlevleri ayrı bir sistemde düzenlenir.
 # Genişletilebilirlik: Yeni roller veya işlevler kolayca eklenebilir.
-# Eğer aynı yetkilendirme mantığını birden fazla sınıfta/metotta kullanmak istiyorsanız, bu yaklaşım uygundur. Ancak daha karmaşık senaryolar için yetkilendirme mantığını tamamen bir middleware veya servis tabanlı bir yapıya taşımayı düşünebilirsiniz.
+# Eğer aynı yetkilendirme mantığını birden fazla sınıfta/metotta kullanmak istiyorsanız, bu yaklaşım uygundur.
+# Ancak daha karmaşık senaryolar için yetkilendirme mantığını tamamen bir middleware veya
+# servis tabanlı bir yapıya taşımayı düşünebilirsiniz.
