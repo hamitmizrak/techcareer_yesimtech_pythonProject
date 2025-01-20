@@ -5,10 +5,10 @@
 # Mixin'ler bağımsızdır ve tek başına kullanılmazlar. Diğer sınıflarla birleştirilerek işlevsellik eklerler.
 
 # Örnek: LoggerMixin ile Loglama Eklemek
-# Bir uygulamada farklı sınıflara loglama özelliği eklemek istediğimizi düşünelim. Bunun için bir LoggerMixin oluşturabiliriz.
+# Bir uygulamada farklı sınıflara loglama özelliği eklemek istediğimizi düşünelim.
+# Bunun için bir LoggerMixin oluşturabiliriz.
 
 import datetime
-
 
 # Mixin Sınıfı
 class LoggerMixin:
