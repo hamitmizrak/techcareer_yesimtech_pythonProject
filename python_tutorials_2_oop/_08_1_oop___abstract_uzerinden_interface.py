@@ -4,9 +4,8 @@
 
 # İşte Python'da arayüz kullanımına dair bir örnek:
 # Örnek: Ödeme Sistemlerinde Arayüz Kullanımı
-# Bir e-ticaret uygulamasında farklı ödeme yöntemlerini (kredi kartı, PayPal, banka transferi) desteklemek istediğimizi düşünelim. Bunun için bir PaymentInterface arayüzü tanımlayabiliriz.
-
-#
+# Bir e-ticaret uygulamasında farklı ödeme yöntemlerini (kredi kartı, PayPal, banka transferi) desteklemek istediğimizi düşünelim.
+# Bunun için bir PaymentInterface arayüzü tanımlayabiliriz.
 
 from abc import ABC, abstractmethod
 
@@ -80,7 +79,13 @@ print("\nBanka Transferi ile Ödeme:")
 make_payment(bank_transfer, 500.0)
 
 # Açıklamalar
-# Arayüz Tanımı: PaymentInterface bir soyut sınıf olarak tanımlandı ve iki metot içeriyor: process_payment ve validate_payment. Bu metodlar, alt sınıflar tarafından uygulanmak zorunda.
-# Alt Sınıflar: Her ödeme yöntemi için (CreditCardPayment, PayPalPayment, BankTransferPayment) ayrı bir sınıf oluşturuldu ve bu sınıflar PaymentInterface'den türetildi.
-# Polimorfizm: make_payment fonksiyonu, PaymentInterface tipindeki tüm nesnelerle çalışabilir. Hangi sınıfın örneği olduğunu bilmesine gerek yoktur.
-# Bu yapı sayesinde yeni bir ödeme yöntemi eklemek istediğimizde, PaymentInterface'i genişleten bir sınıf oluşturmamız yeterli olacaktır.
+# Arayüz Tanımı: PaymentInterface bir soyut sınıf olarak tanımlandı ve iki metot içeriyor: process_payment ve validate_payment.
+# Bu metodlar, alt sınıflar tarafından uygulanmak zorunda.
+
+# Alt Sınıflar: Her ödeme yöntemi için (CreditCardPayment, PayPalPayment, BankTransferPayment) ayrı bir sınıf oluşturuldu
+# ve bu sınıflar PaymentInterface'den türetildi.
+
+# Polimorfizm: make_payment fonksiyonu, PaymentInterface tipindeki tüm nesnelerle çalışabilir.
+# Hangi sınıfın örneği olduğunu bilmesine gerek yoktur.
+# Bu yapı sayesinde yeni bir ödeme yöntemi eklemek istediğimizde, PaymentInterface'i genişleten
+# bir sınıf oluşturmamız yeterli olacaktır.
