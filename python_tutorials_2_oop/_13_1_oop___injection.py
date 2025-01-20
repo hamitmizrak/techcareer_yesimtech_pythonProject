@@ -48,7 +48,6 @@ class DataProcessor:
         # Veriyi işleyip kaydediyoruz
         processed_data = f"İşlenmiş: {data}"
         self.storage.save(processed_data)
-
 # Kullanım
 # Dosya depolama kullanarak işlem
 file_storage = FileStorage()
@@ -61,6 +60,8 @@ db_storage = DatabaseStorage()
 processor_with_db = DataProcessor(db_storage)
 processor_with_db.process_and_save("Python Dependency Injection")
 # Çıktı: Veritabanına kaydedildi: İşlenmiş: Python Dependency Injection
+
+
 
 
 # Açıklamalar
