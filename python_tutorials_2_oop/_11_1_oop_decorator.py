@@ -1,8 +1,11 @@
 # Decorator Design Pattern
-# Decorator Tasarım Deseni, nesnelerin işlevselliğini dinamik olarak değiştirmek veya genişletmek için kullanılır. Nesnelerin temel işlevlerini bozmadan yeni özellikler eklemenizi sağlar.
-# Bu desen, Python'da fonksiyon dekoratörleri kullanılarak kolayca uygulanabilir. Ancak, nesnelerin işlevselliğini genişletmek için sınıf tabanlı bir yaklaşım da mümkündür.
+# Decorator Tasarım Deseni, nesnelerin işlevselliğini dinamik olarak değiştirmek veya genişletmek için kullanılır.
+# Nesnelerin temel işlevlerini bozmadan yeni özellikler eklemenizi sağlar.
+# Bu desen, Python'da fonksiyon dekoratörleri kullanılarak kolayca uygulanabilir.
+# Ancak, nesnelerin işlevselliğini genişletmek için sınıf tabanlı bir yaklaşım da mümkündür.
 # Gerçek Hayat Senaryosu
-# Bir kafede farklı içeceklerin fiyatlarını hesapladığınızı düşünün. İçeceklere dinamik olarak özellikler eklemek istiyorsunuz (örneğin, süt, şeker, çikolata eklemek).
+# Bir kafede farklı içeceklerin fiyatlarını hesapladığınızı düşünün.
+# İçeceklere dinamik olarak özellikler eklemek istiyorsunuz (örneğin, süt, şeker, çikolata eklemek).
 # Temel içeceği değiştirmeden, dekoratörler ile ekstra özellikler ekleyebilirsiniz.
 
 from abc import ABC, abstractmethod
