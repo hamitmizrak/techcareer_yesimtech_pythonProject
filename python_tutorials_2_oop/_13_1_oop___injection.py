@@ -1,15 +1,19 @@
 # Dependency Injection (Bağımlılık Enjeksiyonu)
-# Dependency Injection (DI), nesneler arası bağımlılıkların başka bir sınıf tarafından sağlandığı bir tasarım desenidir. Bu yöntem, bağımlılıkların sınıf içinde değil, dışarıdan geçirilmesiyle uygulanır. DI, kodun test edilebilirliğini artırır, modülerliği geliştirir ve sıkı bağımlılıkları gevşetir.
-#
+# Dependency Injection (DI), nesneler arası bağımlılıkların başka bir sınıf tarafından sağlandığı bir tasarım desenidir.
+# Bu yöntem, bağımlılıkların sınıf içinde değil, dışarıdan geçirilmesiyle uygulanır.
+# DI, kodun test edilebilirliğini artırır, modülerliği geliştirir ve sıkı bağımlılıkları gevşetir.
+
 # Temel Yapı
 # DI, üç farklı yöntemle uygulanabilir:
-#
+
 # Constructor Injection: Bağımlılıklar, nesne oluşturulurken yapıcı (constructor) aracılığıyla sağlanır.
 # Setter Injection: Bağımlılıklar, setter metotları aracılığıyla sağlanır.
 # Interface Injection: Bağımlılıklar, bir arayüz aracılığıyla sağlanır.
+
 # Python'da Dependency Injection Örneği
 # Senaryo
-# Bir uygulama, veri kaydetmek için farklı türde veri depolama yöntemlerini (örneğin, dosya veya veritabanı) destekliyor. Dependency Injection, veri depolama yöntemini dışarıdan sağlayarak modüler bir yapı sağlar.
+# Bir uygulama, veri kaydetmek için farklı türde veri depolama yöntemlerini (örneğin, dosya veya veritabanı) destekliyor.
+# Dependency Injection, veri depolama yöntemini dışarıdan sağlayarak modüler bir yapı sağlar.
 
 from abc import ABC, abstractmethod
 
@@ -49,12 +53,14 @@ class DataProcessor:
 # Dosya depolama kullanarak işlem
 file_storage = FileStorage()
 processor_with_file = DataProcessor(file_storage)
-processor_with_file.process_and_save("Python Dependency Injection")  # Çıktı: Dosyaya kaydedildi: İşlenmiş: Python Dependency Injection
+processor_with_file.process_and_save("Python Dependency Injection")
+# Çıktı: Dosyaya kaydedildi: İşlenmiş: Python Dependency Injection
 
 # Veritabanı depolama kullanarak işlem
 db_storage = DatabaseStorage()
 processor_with_db = DataProcessor(db_storage)
-processor_with_db.process_and_save("Python Dependency Injection")  # Çıktı: Veritabanına kaydedildi: İşlenmiş: Python Dependency Injection
+processor_with_db.process_and_save("Python Dependency Injection")
+# Çıktı: Veritabanına kaydedildi: İşlenmiş: Python Dependency Injection
 
 
 # Açıklamalar
@@ -71,6 +77,9 @@ processor_with_db.process_and_save("Python Dependency Injection")  # Çıktı: V
 # Bu, bağımlılıkların test sırasında veya gerçek uygulama sırasında kolayca değiştirilmesine olanak tanır.
 
 # Esneklik:
-# DataProcessor sınıfı, veri depolama yöntemine dair hiçbir bilgi içermez. Hangi depolama yöntemi kullanılıyorsa, o sınıfın bir örneği dışarıdan sağlanır.
+# DataProcessor sınıfı, veri depolama yöntemine dair hiçbir bilgi içermez. Hangi depolama yöntemi kullanılıyorsa,
+# o sınıfın bir örneği dışarıdan sağlanır.
 # Gelişmiş Kullanım: DI Framework
-# Daha karmaşık projelerde manuel bağımlılık yönetimi zor olabilir. Bu nedenle, bir Dependency Injection Framework kullanmak işleri kolaylaştırabilir. Python'da inject veya dependency-injector gibi kütüphaneler bu işi kolaylaştırır.
+# Daha karmaşık projelerde manuel bağımlılık yönetimi zor olabilir.
+# Bu nedenle, bir Dependency Injection Framework kullanmak işleri kolaylaştırabilir.
+# Python'da inject veya dependency-injector gibi kütüphaneler bu işi kolaylaştırır.
