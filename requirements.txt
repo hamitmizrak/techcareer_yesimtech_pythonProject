@@ -14,3 +14,8 @@
 # Bu kütüphaneler, Python ile genel geliştirme işlerinde yaygın olarak kullanılır:
 matplotlib==3.7.2      # Grafik ve görselleştirme
 
+
+pip~=23.2.1
+dataclasses~=0.6
+Django~=3.2
+pycryptodome~=3.21.0
