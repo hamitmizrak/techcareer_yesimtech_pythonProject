@@ -4,7 +4,8 @@
 # pip install pycryptodome --no-cache-dir
 
 # 3. RSA (Rivest-Shamir-Adleman) - Asimetrik Şifreleme
-# RSA, asimetrik bir şifreleme algoritmasıdır ve iki anahtar (public ve private) ile çalışır. Şifreleme için pycryptodome kütüphanesini kullanabiliriz.
+# RSA, asimetrik bir şifreleme algoritmasıdır ve iki anahtar (public ve private) ile çalışır.
+# Şifreleme için pycryptodome kütüphanesini kullanabiliriz.
 
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP

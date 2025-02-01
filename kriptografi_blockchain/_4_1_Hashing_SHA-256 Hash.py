@@ -5,7 +5,8 @@
 
 
 # 4. Hashing (SHA-256, MD5, BLAKE2b)
-# Hashing işlemi, veriyi geri döndürülemez bir özet haline getiren tek yönlü bir fonksiyondur. hashlib modülü ile hashing işlemlerini gerçekleştirebiliriz.
+# Hashing işlemi, veriyi geri döndürülemez bir özet haline getiren tek yönlü bir fonksiyondur.
+# hashlib modülü ile hashing işlemlerini gerçekleştirebiliriz.
 
 
 import hashlib
