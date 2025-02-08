@@ -94,12 +94,12 @@ class Blockchain:
 # Blockchain Kullanımı
 # Yeni bir blockchain oluştur
 test_chain = Blockchain()
-test_chain.add_transaction("Alice", "Bob", 10)  # Alice'den Bob'a 10 birim gönderme işlemi ekle
-test_chain.add_transaction("Bob", "Charlie", 5)  # Bob'dan Charlie'ye 5 birim gönderme işlemi ekle
+test_chain.add_transaction("Hamit", "Mehmet", 10)  # Alice'den Bob'a 10 birim gönderme işlemi ekle
+test_chain.add_transaction("Mehmet", "Ali", 5)  # Bob'dan Charlie'ye 5 birim gönderme işlemi ekle
 
 test_chain.mine_block()  # İşlemleri içeren yeni bir blok madenciliği yap ve ekle
 
-test_chain.add_transaction("Charlie", "Alice", 2)  # Charlie'den Alice'e 2 birim gönderme işlemi ekle
+test_chain.add_transaction("Ali", "Mustafaya", 2)  # Charlie'den Alice'e 2 birim gönderme işlemi ekle
 test_chain.mine_block()  # Yeni blok madenciliği yap ve ekle
 
 # Blockchain doğrulaması
